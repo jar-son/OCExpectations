@@ -29,14 +29,24 @@
 
 @implementation OCNegativeExpectationHandler
 
+
+
 - (id)handleActual:(id)actual matcher:(id<OCSpecMatcher>)matcher
 {
-	id match = [matcher respondsToSelector:@selector(doesNotMatch:)] ? OCSpecNot([matcher doesNotMatch:actual]) : [matcher matches:actual];
+	return [self handleActual:actual matcher:matcher withUserInfo:nil];
+}
+
+- (id)handleActual:(id)actual matcher:(id<OCSpecMatcher>)matcher withUserInfo:(NSDictionary *)userInfo{
+    id match = [matcher respondsToSelector:@selector(doesNotMatch:)] ? OCSpecNot([matcher doesNotMatch:actual]) : [matcher matches:actual];
 	if ([OCSpecNot(match) boolValue] != NO)
 	{
 		return match;
 	}
-	[[NSException exceptionWithName:OCExpectationNotMetException reason:[matcher failureMessageForShouldNot] userInfo:nil] raise];
+    NSString *reason = [matcher failureMessageForShouldNot];
+    if (userInfo) {
+        reason = [NSString stringWithFormat:@"%@\nUser Info: %@",reason, userInfo];
+    }
+	[[NSException exceptionWithName:OCExpectationNotMetException reason:reason userInfo:userInfo] raise];
 	return nil;
 }
 

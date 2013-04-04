@@ -33,9 +33,17 @@
 	return [[[OCPositiveExpectationHandler alloc] init] handleActual:self matcher:matcher];
 }
 
+- (id)should:(id<OCSpecMatcher>)matcher withUserInfo:(NSDictionary *)userInfo{
+    return [[[OCPositiveExpectationHandler alloc] init] handleActual:self matcher:matcher withUserInfo:userInfo];
+}
+
 - (id)shouldNot:(id<OCSpecMatcher>)matcher
 {
 	return [[[OCNegativeExpectationHandler alloc] init] handleActual:self matcher:matcher];
+}
+
+-(id)shouldNot:(id<OCSpecMatcher>)matcher withUserInfo:(NSDictionary *)userInfo{
+    return [[[OCNegativeExpectationHandler alloc] init] handleActual:self matcher:matcher withUserInfo:userInfo];
 }
 
 @end

@@ -34,7 +34,8 @@
 @interface NSObject(OCExpectations)
 
 - (id)should:(id<OCSpecMatcher>)matcher;
-
+- (id)should:(id<OCSpecMatcher>)matcher withUserInfo:(NSDictionary *)userInfo;
 - (id)shouldNot:(id<OCSpecMatcher>)matcher;
+- (id)shouldNot:(id<OCSpecMatcher>)matcher withUserInfo:(NSDictionary *)userInfo;
 
 @end

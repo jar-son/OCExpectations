@@ -31,6 +31,10 @@
 
 - (id)handleActual:(id)actual matcher:(id<OCSpecMatcher>)matcher
 {
+   return [self handleActual:actual matcher:matcher withUserInfo:nil];
+}
+
+- (id)handleActual:(id)actual matcher:(id<OCSpecMatcher>)matcher withUserInfo:(NSDictionary *)userInfo{
 	// Fails unless the matcher answers YES. Fails therefore if the matcher
 	// answers NO or nil. Send the match result through the negation
 	// process. This gives a boolean and handles the nil machinations. Negate
@@ -40,7 +44,11 @@
 	{
 		return match;
 	}
-	[[NSException exceptionWithName:OCExpectationNotMetException reason:[matcher failureMessageForShould] userInfo:nil] raise];
+    NSString *reason = [matcher failureMessageForShould];
+    if (userInfo) {
+        reason = [NSString stringWithFormat:@"%@\nUser Info: %@",reason, userInfo];
+    }
+	[[NSException exceptionWithName:OCExpectationNotMetException reason:reason userInfo:userInfo] raise];
 	return nil;
 }
 

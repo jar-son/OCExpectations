@@ -32,5 +32,6 @@
 @interface OCNegativeExpectationHandler : NSObject
 
 - (id)handleActual:(id)actual matcher:(id<OCSpecMatcher>)matcher;
+- (id)handleActual:(id)actual matcher:(id<OCSpecMatcher>)matcher withUserInfo:(NSDictionary *)userInfo;
 
 @end
