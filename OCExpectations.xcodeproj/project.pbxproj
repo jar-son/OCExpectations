@@ -479,7 +479,7 @@
 			name = OCExpectationsLibTests;
 			productName = OCExpectationsLibTests;
 			productReference = 7807A2EC15B4542A00E69441 /* OCExpectationsLibTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		78C5D6A815B2858B00CA3D41 /* OCExpectations */ = {
 			isa = PBXNativeTarget;
@@ -516,7 +516,7 @@
 			name = OCExpectationsTests;
 			productName = OCExpectationsTests;
 			productReference = 78C5D6C115B2858B00CA3D41 /* OCExpectationsTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -524,7 +524,8 @@
 		78C5D69F15B2858B00CA3D41 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastTestingUpgradeCheck = 0610;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Pioneering Software, United Kingdom";
 			};
 			buildConfigurationList = 78C5D6A215B2858B00CA3D41 /* Build configuration list for PBXProject "OCExpectations" */;
@@ -714,7 +715,6 @@
 		7807A2FE15B4542A00E69441 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DSTROOT = /tmp/OCExpectationsLib.dst;
@@ -733,7 +733,6 @@
 		7807A2FF15B4542A00E69441 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DSTROOT = /tmp/OCExpectationsLib.dst;
@@ -753,7 +752,6 @@
 		7807A30115B4542A00E69441 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -774,7 +772,6 @@
 		7807A30215B4542A00E69441 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -826,7 +823,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 73.0;
@@ -857,7 +853,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 73.0;
